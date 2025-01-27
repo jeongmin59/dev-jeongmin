@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import '@/layouts/globals.css'
-import Header from '@/layouts/Header'
-import Footer from '@/layouts/Footer'
+import '@/styles/globals.css'
+import Header from '@/components/common/Header'
+import Footer from '@/components/common/Footer'
 
 export const metadata: Metadata = {
 	title: 'dev-jeongmin',
@@ -17,9 +17,7 @@ export default function RootLayout({
 		<html lang='ko' suppressHydrationWarning>
 			<body>
 				<Header />
-				<main className='container min-h-screen px-4 py-8 mt-14'>
-					{children}
-				</main>
+				<main className='min-h-screen px-4 py-8 mt-14'>{children}</main>
 				<Footer />
 			</body>
 		</html>
