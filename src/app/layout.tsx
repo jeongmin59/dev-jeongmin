@@ -17,7 +17,9 @@ export default function RootLayout({
 		<html lang='ko' suppressHydrationWarning>
 			<body>
 				<Header />
-				<main className='min-h-screen px-4 py-8 mt-14'>{children}</main>
+				<main className='min-h-screen py-4 mt-14 sm:py-6 md:py-8'>
+					{children}
+				</main>
 				<Footer />
 			</body>
 		</html>

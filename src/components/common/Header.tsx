@@ -21,11 +21,11 @@ const socialLinkStyles = 'transition-transform hover:scale-110'
 export default function Header() {
 	return (
 		<header className='w-full fixed top-0 z-50 backdrop-blur-sm bg-white/75 transition-all duration-200'>
-			<div className='max-w-5xl mx-auto h-14 flex items-center justify-between'>
+			<div className='max-w-4xl mx-auto h-14 flex items-center justify-between px-4'>
 				<nav className='flex items-center space-x-6'>
 					{NAV_LINKS.map(({ href, label }) => (
 						<Link key={href} href={href} className={navLinkStyles}>
-							<span className='text-md font-semibold tracking-wide'>
+							<span className='text-md font-semibold tracking-wide '>
 								{label}
 							</span>
 						</Link>

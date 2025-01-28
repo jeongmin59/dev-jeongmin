@@ -1,5 +1,5 @@
 import { compileMDX } from 'next-mdx-remote/rsc'
-import { PostBody } from '@/components/blog/PostBody'
+import { PostBody } from '@/components/blog/detail/PostBody'
 import { getPost } from '@/lib/posts'
 import { MDXComponents } from '@/styles/MDXComponents'
 

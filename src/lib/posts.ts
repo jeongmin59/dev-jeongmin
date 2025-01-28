@@ -5,7 +5,7 @@ import { cache } from 'react'
 import type { Post, PostMetadata } from '@/types/Post'
 
 export async function getPosts(): Promise<Post[]> {
-	const postsDirectory = path.join(process.cwd(), 'src/posts')
+	const postsDirectory = path.join(process.cwd(), '/posts')
 	const categories = await fs.readdir(postsDirectory)
 
 	const posts: Post[] = []
@@ -28,7 +28,8 @@ export async function getPosts(): Promise<Post[]> {
 				date: data.date,
 				description: data.description,
 				tags: data.tags,
-				content
+				content,
+				thumbnail: data.thumbnail
 			})
 		}
 	}
@@ -41,7 +42,7 @@ export async function getPosts(): Promise<Post[]> {
 export const getPost = cache(async (category: string, slug: string) => {
 	const filePath = path.join(
 		process.cwd(),
-		'src/posts',
+		'/posts',
 		category,
 		slug,
 		'content.mdx'
@@ -57,7 +58,7 @@ export const getPost = cache(async (category: string, slug: string) => {
 })
 
 export const getAllPosts = cache(async () => {
-	const postsDirectory = path.join(process.cwd(), 'src/posts')
+	const postsDirectory = path.join(process.cwd(), '/posts')
 	const categories = await fs.readdir(postsDirectory)
 
 	const posts = await Promise.all(
