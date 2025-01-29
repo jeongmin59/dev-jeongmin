@@ -51,6 +51,28 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						// 인라인 코드
+						'code::before': {
+							content: '""'
+						},
+						'code::after': {
+							content: '""'
+						},
+						':not(pre) > code': {
+							fontFamily: 'var(--font-mono)',
+							fontWeight: '400',
+							backgroundColor: 'var(--tw-prose-inlineCode-bg)',
+							color: 'var(--tw-prose-inlineCode)',
+							padding: '0.2em 0.5em',
+							borderRadius: '0.375rem',
+							overflowWrap: 'break-word'
+						}
+					}
+				}
 			}
 		}
 	},

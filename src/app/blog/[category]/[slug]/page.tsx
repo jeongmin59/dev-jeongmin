@@ -1,7 +1,6 @@
-import { compileMDX } from 'next-mdx-remote/rsc'
 import { PostBody } from '@/components/blog/detail/PostBody'
 import { getPost } from '@/lib/posts'
-import { MDXComponents } from '@/styles/MDXComponents'
+import { compileMDXWithPrettyCode } from '@/lib/mdx'
 
 interface PostPageProps {
 	params: {
@@ -15,10 +14,7 @@ export default async function PostPage({ params }: PostPageProps) {
 	const { category, slug } = resolvedParams
 
 	const post = await getPost(category, slug)
-	const { content } = await compileMDX({
-		source: post.content,
-		components: MDXComponents
-	})
+	const { content } = await compileMDXWithPrettyCode(post.content)
 
 	return <PostBody metadata={post.metadata}>{content}</PostBody>
 }

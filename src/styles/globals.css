@@ -35,6 +35,8 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --tw-prose-inlineCode-bg: theme('colors.indigo.50');
+    --tw-prose-inlineCode: theme('colors.indigo.600');
   }
   .dark {
     --background: 222.2 84% 4.9%;
@@ -61,6 +63,8 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --tw-prose-inlineCode-bg: theme('colors.indigo.950 / 0.5');
+    --tw-prose-inlineCode: theme('colors.indigo.300');
   }
 }
 
@@ -71,4 +75,45 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* 코드 내부 폰트 */
+code {
+  @apply font-mono;
+}
+
+/* 코드 블럭 */
+pre {
+  counter-reset: line;
+  @apply my-4 overflow-x-auto rounded-lg border border-slate-900/10 bg-slate-900/5 dark:border-slate-100/10 dark:bg-slate-900/80;
+}
+
+/* 코드 블럭 제목 */
+[data-rehype-pretty-code-title] {
+  @apply rounded-t-lg bg-slate-100 px-2 py-1 font-medium text-slate-600 dark:bg-slate-950/50 dark:text-slate-300 dark:hover:bg-slate-900/50 dark:hover:text-slate-200 sm:px-3 sm:py-1.5;
+}
+
+[data-rehype-pretty-code-title] + pre {
+  @apply mt-0 rounded-t-none;
+}
+
+/* 특정 줄 강조 */
+.highlighted {
+  background-color: #3e3d32;
+  @apply -mx-4 block px-4;
+}
+
+/* 코드 블럭 내부 라인 번호 */
+.line-number {
+  counter-increment: line;
+}
+
+.line-number::before {
+  content: counter(line);
+  @apply mr-3 inline-block text-right text-slate-500;
+}
+
+/* 코드 블럭 내부 강조 단어 */
+.word-highlighted {
+  @apply rounded-md bg-slate-500/20 p-1;
 }
