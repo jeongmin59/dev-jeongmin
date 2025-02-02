@@ -70,6 +70,13 @@ export default {
 							padding: '0.2em 0.5em',
 							borderRadius: '0.375rem',
 							overflowWrap: 'break-word'
+						},
+						// 인용구
+						blockquote: {
+							fontWeight: '400',
+							quotes: 'none',
+							textDecoration: 'none',
+							borderLeftColor: 'var(--tw-prose-inlineCode)'
 						}
 					}
 				}
