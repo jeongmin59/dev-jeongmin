@@ -1,5 +1,6 @@
 import { compileMDX } from 'next-mdx-remote/rsc'
 import rehypePrettyCode from 'rehype-pretty-code'
+import remarkGfm from 'remark-gfm'
 import { MDXComponents } from '@/styles/MDXComponents'
 
 export async function compileMDXWithPrettyCode(source: string) {
@@ -8,6 +9,7 @@ export async function compileMDXWithPrettyCode(source: string) {
 		components: MDXComponents,
 		options: {
 			mdxOptions: {
+				remarkPlugins: [remarkGfm],
 				rehypePlugins: [
 					[
 						rehypePrettyCode,
