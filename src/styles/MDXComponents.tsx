@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Callout } from '@/components/mdx/Callout'
 
 export const MDXComponents = {
 	a: ({ href, children }: { href: string; children: React.ReactNode }) => (
-		<Link href={href} className='text-blue-600 hover:underline'>
+		<Link href={href} className='text-indigo-600'>
 			{children}
 		</Link>
 	),
@@ -17,5 +18,7 @@ export const MDXComponents = {
 			className='rounded-lg'
 		/>
 	),
-	hr: () => <hr className='border-t border-slate-200 my-8' />
+	hr: () => <hr className='border-t border-slate-200 my-6' />,
+
+	Callout
 }
