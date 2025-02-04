@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { RiGithubFill, RiLinkedinBoxFill } from 'react-icons/ri'
+import { ThemeToggle } from '@/components/common/ThemeToggle'
 
 const NAV_LINKS = [
 	{ href: '/', label: 'Home' },
@@ -15,12 +16,14 @@ const SOCIAL_LINKS = [
 	}
 ]
 
-const navLinkStyles = 'transition-colors duration-200 hover:text-indigo-600'
-const socialLinkStyles = 'transition-transform hover:scale-110'
+const navLinkStyles =
+	'transition-colors duration-200 hover:text-indigo-600 dark:text-slate-100 dark:hover:text-indigo-400'
+const socialLinkStyles =
+	'p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'
 
 export default function Header() {
 	return (
-		<header className='w-full fixed top-0 z-50 backdrop-blur-sm bg-white/75 transition-all duration-200'>
+		<header className='w-full fixed top-0 z-50 backdrop-blur-sm bg-white/75 dark:bg-slate-900/75 transition-all duration-200'>
 			<div className='max-w-4xl mx-auto h-14 flex items-center justify-between px-4'>
 				<nav className='flex items-center space-x-6'>
 					{NAV_LINKS.map(({ href, label }) => (
@@ -32,7 +35,8 @@ export default function Header() {
 					))}
 				</nav>
 
-				<nav className='flex items-center space-x-4'>
+				<nav className='flex items-center space-x-2'>
+					<ThemeToggle />
 					{SOCIAL_LINKS.map(({ href, icon: Icon }) => (
 						<Link
 							key={href}

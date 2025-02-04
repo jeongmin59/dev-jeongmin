@@ -17,7 +17,7 @@ export default function RootLayout({
 	return (
 		<html lang='ko' suppressHydrationWarning>
 			<body suppressHydrationWarning>
-				<ThemeProvider attribute='data-theme'>
+				<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
 					<Header />
 					<main className='min-h-screen py-4 mt-14 sm:py-6 md:py-8'>
 						{children}
