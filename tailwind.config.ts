@@ -55,6 +55,9 @@ export default {
 			typography: {
 				DEFAULT: {
 					css: {
+						h2: {
+							fontWeight: '600',
+						},
 						// 인라인 코드
 						'code::before': {
 							content: '""'
