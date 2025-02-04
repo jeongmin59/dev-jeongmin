@@ -16,20 +16,20 @@ const calloutConfig = {
 	note: {
 		icon: RiStickyNoteFill,
 		style:
-			'bg-indigo-100/50 text-indigo-800 dark:bg-indigo-950/30 dark:text-indigo-200',
-		iconColor: 'text-indigo-600 dark:text-indigo-400'
+			'bg-indigo-100/50 text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-100',
+		iconColor: 'text-indigo-600 dark:text-indigo-300'
 	},
 	info: {
 		icon: RiInformationFill,
 		style:
-			'bg-emerald-100/50 text-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-200',
-		iconColor: 'text-emerald-600 dark:text-emerald-400'
+			'bg-emerald-100/50 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-100',
+		iconColor: 'text-emerald-600 dark:text-emerald-300'
 	},
 	question: {
 		icon: RiQuestionFill,
 		style:
-			'bg-amber-100/50 text-amber-800 dark:bg-amber-950/30 dark:text-amber-200',
-		iconColor: 'text-amber-600 dark:text-amber-400'
+			'bg-amber-100/50 text-amber-800 dark:bg-amber-900/50 dark:text-amber-100',
+		iconColor: 'text-amber-600 dark:text-amber-300'
 	}
 }
 
@@ -43,7 +43,7 @@ export function Callout({
 
 	const style = hasIcon
 		? config.style
-		: 'bg-slate-100/50 text-slate-800 dark:bg-slate-950/30 dark:text-slate-200'
+		: 'bg-slate-100/50 text-slate-800 dark:bg-slate-800/50 dark:text-slate-200'
 
 	return (
 		<div className={`my-6 flex items-center gap-3 rounded-md p-4 ${style}`}>

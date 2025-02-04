@@ -14,7 +14,7 @@ export async function compileMDXWithPrettyCode(source: string) {
 					[
 						rehypePrettyCode,
 						{
-							theme: 'monokai',
+              theme: 'one-dark-pro',
 							keepBackground: true,
 							showLineNumbers: true,
 							onVisitLine(node: {

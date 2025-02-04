@@ -7,7 +7,7 @@ interface PostListProps {
 
 export function PostList({ posts }: PostListProps) {
 	return (
-		<div className='flex flex-col gap-4'>
+		<div className='flex flex-col gap-4 text-slate-800 dark:text-slate-50'>
 			{posts.map((post) => (
 				<PostCard key={post.date} post={post} />
 			))}

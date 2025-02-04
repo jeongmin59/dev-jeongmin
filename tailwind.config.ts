@@ -68,11 +68,15 @@ export default {
 						':not(pre) > code': {
 							fontFamily: 'var(--font-mono)',
 							fontWeight: '400',
-							backgroundColor: 'var(--tw-prose-inlineCode-bg)',
-							color: 'var(--tw-prose-inlineCode)',
+							backgroundColor: 'rgb(238 242 255)', // bg-indigo-50
+							color: 'rgb(79 70 229)', // text-indigo-600
 							padding: '0.2em 0.5em',
 							borderRadius: '0.375rem',
-							overflowWrap: 'break-word'
+							overflowWrap: 'break-word',
+						},
+						'.dark :not(pre) > code': {
+							backgroundColor: 'rgb(30 41 59)', // dark:bg-slate-800
+							color: 'rgb(165 180 252)' // dark:text-indigo-300
 						},
 						// 인용구
 						blockquote: {

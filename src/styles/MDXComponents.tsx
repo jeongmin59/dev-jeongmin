@@ -4,7 +4,9 @@ import { Callout } from '@/components/mdx/Callout'
 
 export const MDXComponents = {
 	a: ({ href, children }: { href: string; children: React.ReactNode }) => (
-		<Link href={href} className='text-indigo-600'>
+		<Link
+			href={href}
+			className='text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300'>
 			{children}
 		</Link>
 	),
